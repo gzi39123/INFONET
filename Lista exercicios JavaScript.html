@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercícios JavaScript</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    button { margin: 5px; padding: 10px 20px; }
+  </style>
+</head>
+<body>
+  <h1>Exercícios JavaScript</h1>
+
+  <div id="botoes">
+    <!-- Um abraço pra quem esta lendo :) -->
+    <script>
+      function ex1() {
+        let km = parseFloat(prompt("Digite a distância em quilômetros:"));
+        let milhas = km / 1.609;
+        alert("Distância em milhas: " + milhas.toFixed(2));
+      }
+
+      function ex2() {
+        let idade = parseInt(prompt("Digite sua idade em anos:"));
+        let idadeDias = idade * 12 * 30;
+        alert("Idade em dias (aproximada): " + idadeDias);
+      }
+
+      function ex3() {
+        let total = parseInt(prompt("Total de votos:"));
+        let brancos = parseInt(prompt("Votos brancos:"));
+        let nulos = parseInt(prompt("Votos nulos:"));
+        let validos = parseInt(prompt("Votos válidos:"));
+        alert("Brancos: " + ((brancos / total) * 100).toFixed(2) + "%\n" +
+              "Nulos: " + ((nulos / total) * 100).toFixed(2) + "%\n" +
+              "Válidos: " + ((validos / total) * 100).toFixed(2) + "%");
+      }
+
+      function ex4() {
+        let custo = parseFloat(prompt("Custo de fábrica do carro:"));
+        let final = custo + (custo * 0.28) + (custo * 0.45);
+        alert("Custo final: R$ " + final.toFixed(2));
+      }
+
+      function ex5() {
+        let n1 = parseFloat(prompt("Nota 1:"));
+        let n2 = parseFloat(prompt("Nota 2:"));
+        let n3 = parseFloat(prompt("Nota 3:"));
+        let media = (n1 * 2 + n2 * 3 + n3 * 5) / 10;
+        alert("Média final: " + media.toFixed(2));
+      }
+
+      function ex6() {
+        let salario = parseFloat(prompt("Salário atual:"));
+        let reajuste = parseFloat(prompt("Reajuste (%):"));
+        let novoSalario = salario + (salario * reajuste / 100);
+        alert("Novo salário: R$ " + novoSalario.toFixed(2));
+      }
+
+      function ex7() {
+        let A = parseFloat(prompt("Digite os Números da sua Expressão Matemática - A:"));
+        let B = parseFloat(prompt("Valor da expressão - B:"));
+        let C = parseFloat(prompt("Valor da expressão - C:"));
+        let resultado = (A * A * 5) - (C / (B - A * 4));
+        alert("Resultado: " + resultado.toFixed(2));
+      }
+
+      function ex8() {
+        let R = parseFloat(prompt("Raio da lata:"));
+        let H = parseFloat(prompt("Altura da lata:"));
+        let volume = 3.14159 * R * R * H;
+        alert("Volume da lata: " + volume.toFixed(2));
+      }
+
+      function ex9() {
+        let C = parseFloat(prompt("Comprimento:"));
+        let L = parseFloat(prompt("Largura:"));
+        let A = parseFloat(prompt("Altura:"));
+        let volume = C * L * A;
+        alert("Volume da caixa: " + volume.toFixed(2));
+      }
+
+      function ex10() {
+        let PC = parseFloat(prompt("Peso consumido (kg):"));
+        let VK = parseFloat(prompt("Valor por quilo:"));
+        let NB = parseInt(prompt("Nº de bebidas:"));
+        let VB = parseFloat(prompt("Valor da bebida:"));
+        let total = (PC * VK) + (NB * VB);
+        alert("Valor total da refeição: R$ " + total.toFixed(2));
+      }
+
+      function ex11() {
+        let A = parseInt(prompt("Valor A:"));
+        let B = parseInt(prompt("Valor B:"));
+        let C = parseInt(prompt("Valor C:"));
+        let soma = A*A + B*B + C*C;
+        alert("Soma dos quadrados: " + soma);
+      }
+
+      function ex12() {
+        let A = parseInt(prompt("Valor A:"));
+        let B = parseInt(prompt("Valor B:"));
+        let C = parseInt(prompt("Valor C:"));
+        let D = parseInt(prompt("Valor D:"));
+        let P = A * C;
+        let S = B + D;
+        alert("Produto (A*C): " + P + "\nSoma (B+D): " + S);
+      }
+
+      function ex13() {
+        let SM = parseFloat(prompt("Salário mensal:"));
+        let PR = parseFloat(prompt("Reajuste (%):"));
+        let salarioReajustado = SM + (SM * PR / 100);
+        let inss = salarioReajustado * 0.11;
+        let irpf = salarioReajustado * 0.27;
+        let NS = salarioReajustado - inss - irpf;
+        alert("Reajustado: R$ " + salarioReajustado.toFixed(2) +
+              "\nINSS (11%): R$ " + inss.toFixed(2) +
+              "\nIRPF (27%): R$ " + irpf.toFixed(2) +
+              "\nSalário líquido: R$ " + NS.toFixed(2));
+      }
+
+      function ex14() {
+        let cotacao = parseFloat(prompt("Cotação do dólar:"));
+        let dolares = parseFloat(prompt("Quantidade de dólares:"));
+        let reais = cotacao * dolares;
+        alert("Valor em reais: R$ " + reais.toFixed(2));
+      }
+
+      function ex15() {
+        let C = parseFloat(prompt("Temperatura em Celsius:"));
+        let F = (9 * C + 160) / 5;
+        alert("Temperatura em Fahrenheit: " + F.toFixed(2) + "°F");
+      }
+
+    
+      for (let i = 1; i <= 15; i++) {
+        const btn = document.createElement("button");
+        btn.textContent = "Exercício " + i;
+        btn.onclick = window["ex" + i];
+        document.getElementById("botoes").appendChild(btn);
+      }
+    </script>
+  </div>
+</body>
+</html>
