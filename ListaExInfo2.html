@@ -10,11 +10,11 @@
 </head>
 <body>
  
- <h1> beijao :* </h1>
+ 
   <h1>Exercícios JavaScript</h1>
 
   <div id="botoes">
-    <!-- Um beijo pra quem esta lendo :) -->
+
     <script>
       function ex1() {
         let km = parseFloat(prompt("Digite a distância em quilômetros:"));
@@ -129,19 +129,35 @@
         alert("Valor em reais: R$ " + reais.toFixed(2));
       }
 
-      function ex15() {
-        let C = parseFloat(prompt("Temperatura em Celsius:"));
-        let F = (9 * C + 160) / 5;
-        alert("Temperatura em Fahrenheit: " + F.toFixed(2) + "°F");
-      }
+      
 
     
-      for (let i = 1; i <= 15; i++) {
-        const btn = document.createElement("button");
-        btn.textContent = "Exercício " + i;
-        btn.onclick = window["ex" + i];
-        document.getElementById("botoes").appendChild(btn);
-      }
+      
+      
+      const nomes = [
+      "Converter km em milhas",
+      "Idade aproximada em dias",
+      "Percentual de votos",
+      "Custo final de um carro",
+      "Média ponderada de notas",
+      "Reajuste de salário",
+      "Expressão matemática (A, B, C)",
+      "Volume de uma lata",
+      "Volume de uma caixa",
+      "Valor total da refeição",
+      "Soma dos quadrados (A, B, C)",
+      "Produto e soma (A, B, C, D)",
+      "Salário reajustado com INSS e IRPF",
+      "Converter dólar para real", 
+    ];
+    
+    for (let i = 1; i <= nomes.length; i++) {
+      const btn = document.createElement("button");
+      btn.textContent = `Exercício ${i}: ${nomes[i - 1]}`;
+      btn.onclick = window["ex" + i];
+      document.getElementById("botoes").appendChild(btn);
+    }
+    
     </script>
   </div>
 </body>
